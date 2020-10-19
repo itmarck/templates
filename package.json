@@ -1,0 +1,41 @@
+{
+  "name": "basic",
+  "description": "Nuxt basic template",
+  "version": "0.0.1",
+  "private": true,
+  "author": {
+    "name": "Marcelo Velásquez",
+    "email": "marceloo.velasquez@hotmail.com",
+    "url": "https://github.com/itmarck"
+  },
+  "repository": {
+    "url": "https://github.com/itmarck/templates"
+  },
+  "scripts": {
+    "dev": "nuxt -o",
+    "build": "nuxt build --modern",
+    "start": "nuxt start",
+    "generate": "nuxt generate",
+    "lint:js": "eslint --ext .js,.vue --ignore-path .gitignore .",
+    "lint": "npm run lint:js"
+  },
+  "dependencies": {
+    "@nuxtjs/pwa": "^3.2.2",
+    "@nuxtjs/axios": "^5.12.2",
+    "@nuxtjs/toast": "3.3.1",
+    "@nuxtjs/device": "1.2.7",
+    "nuxt-i18n": "6.15.4",
+    "core-js": "^3.6.5",
+    "nuxt": "^2.14.7"
+  },
+  "devDependencies": {
+    "@nuxtjs/eslint-config": "^3.1.0",
+    "@nuxtjs/eslint-module": "^3.0.0",
+    "babel-eslint": "^10.1.0",
+    "eslint": "^7.11.0",
+    "eslint-config-prettier": "^6.13.0",
+    "eslint-plugin-nuxt": "^1.0.0",
+    "eslint-plugin-prettier": "^3.1.4",
+    "prettier": "^2.1.2"
+  }
+}
