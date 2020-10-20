@@ -1,8 +1,15 @@
 <template>
-  <div>
-    <Nuxt />
+  <v-app>
+    <v-main>
+      <v-container class="content" fluid>
+        <Nuxt />
+      </v-container>
+    </v-main>
+
     <SimpleFooter />
-  </div>
+
+    <Snackbar />
+  </v-app>
 </template>
 
 <script>

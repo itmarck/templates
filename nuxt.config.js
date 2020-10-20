@@ -1,6 +1,9 @@
 import i18n from './i18n'
 
+const baseURL = 'https://localhost:8080'
+
 export default {
+  ssr: false,
   head: {
     title: 'Basic',
     meta: [
@@ -18,28 +21,43 @@ export default {
     meta: {
       title: 'Basic Template',
       author: 'Marcelo Velásquez',
+      theme_color: '#333',
     },
     manifest: {
       name: 'Basic Template',
       short_name: 'Basic',
-      lang: 'es',
       description: 'Nuxt basic template',
+      start_url: '/',
+      lang: 'es',
+      shortcuts: [],
+    },
+    workbox: {
+      enabled: false,
     },
   },
   css: [],
-  plugins: [],
+  plugins: ['~/plugins/snackbar.js', '~/plugins/repository.js'],
   loading: { color: '#fff' },
   components: true,
-  buildModules: ['@nuxtjs/eslint-module'],
+  buildModules: ['@nuxtjs/eslint-module', '@nuxtjs/vuetify'],
   modules: [
     '@nuxtjs/pwa',
     '@nuxtjs/axios',
-    '@nuxtjs/toast',
     '@nuxtjs/device',
     ['nuxt-i18n', i18n],
   ],
-  toast: { position: 'bottom-right', duration: 5000, keepOnHover: true },
-  axios: {},
+  vuetify: { optionsPath: './vuetify.options.js' },
+  axios: {
+    proxy: false,
+    https: true,
+    prefix: '/api',
+    baseURL,
+  },
+  proxy: {
+    '/api': {
+      target: baseURL,
+    },
+  },
   build: {
     analize: true,
     extractCSS: {

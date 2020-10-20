@@ -1,5 +1,7 @@
 <template>
-  <footer> </footer>
+  <footer>
+    <v-container class="content" fluid> </v-container>
+  </footer>
 </template>
 
 <script>
